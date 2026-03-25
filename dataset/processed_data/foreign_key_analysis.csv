@@ -1,0 +1,18 @@
+child_entity,child_keys,parent_entity,parent_keys,total_child_records,unique_child_values,unique_parent_values,orphaned_records,integrity_pct
+sales_order_items,['sales_order'],sales_order_headers,['sales_order'],167,100,100,0,100.0
+sales_order_schedule_lines,['sales_order'],sales_order_headers,['sales_order'],179,100,100,0,100.0
+sales_order_schedule_lines,"['sales_order', 'sales_order_item']",sales_order_items,"['sales_order', 'sales_order_item']",179,167,167,0,100.0
+sales_order_headers,['sold_to_party'],business_partners,['business_partner'],100,8,8,0,100.0
+sales_order_items,['material'],products,['product'],167,69,69,0,100.0
+sales_order_items,['production_plant'],plants,['plant'],167,7,44,0,100.0
+outbound_delivery_items,['delivery_document'],outbound_delivery_headers,['delivery_document'],137,86,86,0,100.0
+billing_document_items,['billing_document'],billing_document_headers,['billing_document'],245,163,163,0,100.0
+billing_document_items,['material'],products,['product'],245,55,69,0,100.0
+billing_document_cancellations,['cancelled_billing_document'],billing_document_headers,['billing_document'],1,0,163,0,100.0
+product_descriptions,['product'],products,['product'],69,69,69,0,100.0
+product_plants,['product'],products,['product'],3036,69,69,0,100.0
+product_plants,['plant'],plants,['plant'],3036,44,44,0,100.0
+product_storage_locations,['product'],products,['product'],15215,69,69,0,100.0
+product_storage_locations,['plant'],plants,['plant'],15215,44,44,0,100.0
+customer_company_assignments,['customer'],business_partners,['business_partner'],8,8,8,0,100.0
+customer_sales_area_assignments,['customer'],business_partners,['business_partner'],28,8,8,0,100.0

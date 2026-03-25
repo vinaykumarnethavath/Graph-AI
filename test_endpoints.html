@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphAI API Tester</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .status {
+            padding: 15px;
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        
+        .status.success {
+            background: #f0fdf4;
+            border-color: #22c55e;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+        }
+        
+        .card h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .card p {
+            color: #64748b;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #5a67d8;
+        }
+        
+        .btn:disabled {
+            background: #cbd5e1;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .result pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .chat-container {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .chat-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 GraphAI API Tester</h1>
+        <p class="subtitle">Test your Order-to-Cash Knowledge Graph API</p>
+        
+        <div class="status success" id="status">
+            <strong>✓ Server Running:</strong> http://localhost:8000
+        </div>
+        
+        <h2 style="margin-bottom: 20px;">Quick Tests</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🏥 Health Check</h3>
+                <p>Verify the API is running</p>
+                <button class="btn" onclick="testEndpoint('/health')">Test Health</button>
+            </div>
+            
+            <div class="card">
+                <h3>📊 Graph Stats</h3>
+                <p>Get graph statistics (nodes, edges)</p>
+                <button class="btn" onclick="testEndpoint('/api/graph/stats')">Get Stats</button>
+            </div>
+            
+            <div class="card">
+                <h3>📦 Get Order</h3>
+                <p>Retrieve order details (ID: 740506)</p>
+                <button class="btn" onclick="testPost('/api/graph/node', {node_id: 'SalesOrder:740506'})">Get Order</button>
+            </div>
+            
+            <div class="card">
+                <h3>🔍 Search Orders</h3>
+                <p>Search for orders starting with '740'</p>
+                <button class="btn" onclick="testPost('/api/graph/search', {query: '740', limit: 5})">Search</button>
+            </div>
+            
+            <div class="card">
+                <h3>🔄 Order Flow</h3>
+                <p>Trace complete O2C flow</p>
+                <button class="btn" onclick="testPost('/api/query/order-flow', {sales_order_id: '740506'})">Trace Flow</button>
+            </div>
+            
+            <div class="card">
+                <h3>👤 Customer Analytics</h3>
+                <p>Get customer metrics (ID: 310000108)</p>
+                <button class="btn" onclick="testPost('/api/query/customer-analytics', {customer_id: '310000108'})">Analyze</button>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <h2 style="margin-bottom: 15px;">💬 AI Chat Interface</h2>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about orders, customers, deliveries... (e.g., 'Find order 740506')" />
+            <button class="btn" onclick="testChat()">Send Message</button>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        async function testEndpoint(endpoint) {
+            showLoading();
+            try {
+                const response = await fetch(`http://localhost:8000${endpoint}`);
+                const data = await response.json();
+                showResult(data, response.status);
+            } catch (error) {
+                showError(error);
+            }
+        }
+        
+        async function testPost(endpoint, body) {
+            showLoading();
+            try {
+                const response = await fetch(`http://localhost:8000${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(body)
+                });
+                const data = await response.json();
+                showResult(data, response.status);
+            } catch (error) {
+                showError(error);
+            }
+        }
+        
+        async function testChat() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) {
+                alert('Please enter a message');
+                return;
+            }
+            
+            showLoading();
+            try {
+                const response = await fetch('http://localhost:8000/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+                const data = await response.json();
+                showResult(data, response.status);
+                input.value = '';
+            } catch (error) {
+                showError(error);
+            }
+        }
+        
+        function showLoading() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<div class="result"><div class="loading"></div> Loading...</div>';
+        }
+        
+        function showResult(data, status) {
+            const resultDiv = document.getElementById('result');
+            const statusClass = status === 200 ? 'success' : 'error';
+            resultDiv.innerHTML = `
+                <div class="result">
+                    <strong>Status: ${status}</strong>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                </div>
+            `;
+        }
+        
+        function showError(error) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <div class="result">
+                    <strong style="color: #ef4444;">Error:</strong>
+                    <pre>${error.message}</pre>
+                </div>
+            `;
+        }
+        
+        // Allow Enter key to send chat
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                testChat();
+            }
+        });
+    </script>
+</body>
+</html>

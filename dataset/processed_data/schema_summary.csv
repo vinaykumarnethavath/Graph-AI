@@ -1,0 +1,269 @@
+entity,column,data_type,is_primary_key,null_count,null_pct,unique_values,sample_value
+sales_order_headers,sales_order,int64,True,0,0.0,100,740506
+sales_order_headers,sales_order_type,object,False,0,0.0,1,OR
+sales_order_headers,sales_organization,object,False,0,0.0,1,ABCD
+sales_order_headers,distribution_channel,int64,False,0,0.0,2,5
+sales_order_headers,organization_division,int64,False,0,0.0,1,99
+sales_order_headers,sales_group,object,False,100,100.0,0,
+sales_order_headers,sales_office,object,False,100,100.0,0,
+sales_order_headers,sold_to_party,int64,False,0,0.0,8,310000108
+sales_order_headers,creation_date,"datetime64[ns, UTC]",False,0,0.0,2,2025-03-31 00:00:00+00:00
+sales_order_headers,created_by_user,object,False,0,0.0,2,USER786
+sales_order_headers,last_change_date_time,"datetime64[ns, UTC]",False,0,0.0,100,2025-03-31 06:42:38.786000+00:00
+sales_order_headers,total_net_amount,float64,False,0,0.0,63,17108.25
+sales_order_headers,overall_delivery_status,object,False,0,0.0,2,C
+sales_order_headers,overall_ord_reltd_billg_status,object,False,100,100.0,0,
+sales_order_headers,overall_sd_doc_reference_status,object,False,100,100.0,0,
+sales_order_headers,transaction_currency,object,False,0,0.0,1,INR
+sales_order_headers,pricing_date,"datetime64[ns, UTC]",False,0,0.0,2,2025-03-31 00:00:00+00:00
+sales_order_headers,requested_delivery_date,"datetime64[ns, UTC]",False,0,0.0,2,2025-03-31 00:00:00+00:00
+sales_order_headers,header_billing_block_reason,object,False,100,100.0,0,
+sales_order_headers,delivery_block_reason,object,False,100,100.0,0,
+sales_order_headers,incoterms_classification,object,False,0,0.0,1,FOR
+sales_order_headers,incoterms_location1,object,False,0,0.0,2,Millerborough
+sales_order_headers,customer_payment_terms,object,False,0,0.0,2,Z009
+sales_order_headers,total_credit_check_status,object,False,100,100.0,0,
+sales_order_items,sales_order,int64,True,0,0.0,100,740506
+sales_order_items,sales_order_item,int64,True,0,0.0,12,10
+sales_order_items,sales_order_item_category,object,False,0,0.0,1,TAN
+sales_order_items,material,object,False,0,0.0,69,S8907367001003
+sales_order_items,requested_quantity,int64,False,0,0.0,11,48
+sales_order_items,requested_quantity_unit,object,False,0,0.0,1,PC
+sales_order_items,transaction_currency,object,False,0,0.0,1,INR
+sales_order_items,net_amount,float64,False,0,0.0,79,9966.1
+sales_order_items,material_group,object,False,0,0.0,2,ZFG1001
+sales_order_items,production_plant,object,False,0,0.0,7,1920
+sales_order_items,storage_location,float64,False,13,7.7844311377245505,7,5101.0
+sales_order_items,sales_document_rjcn_reason,object,False,137,82.03592814371258,1,61
+sales_order_items,item_billing_block_reason,object,False,167,100.0,0,
+sales_order_schedule_lines,sales_order,int64,True,0,0.0,100,740506
+sales_order_schedule_lines,sales_order_item,int64,True,0,0.0,12,10
+sales_order_schedule_lines,schedule_line,int64,True,0,0.0,2,1
+sales_order_schedule_lines,confirmed_delivery_date,"datetime64[ns, UTC]",False,12,6.70391061452514,3,2025-03-31 00:00:00+00:00
+sales_order_schedule_lines,order_quantity_unit,object,False,0,0.0,1,PC
+sales_order_schedule_lines,confd_order_qty_by_matl_avail_check,int64,False,0,0.0,12,48
+outbound_delivery_headers,actual_goods_movement_date,"datetime64[ns, UTC]",False,83,96.51162790697674,2,2025-04-29 00:00:00+00:00
+outbound_delivery_headers,actual_goods_movement_time,datetime64[ns],False,86,100.0,0,
+outbound_delivery_headers,creation_date,"datetime64[ns, UTC]",False,0,0.0,3,2025-03-31 00:00:00+00:00
+outbound_delivery_headers,creation_time,datetime64[ns],False,86,100.0,0,
+outbound_delivery_headers,delivery_block_reason,object,False,86,100.0,0,
+outbound_delivery_headers,delivery_document,int64,True,0,0.0,86,80737721
+outbound_delivery_headers,hdr_general_incompletion_status,object,False,0,0.0,1,C
+outbound_delivery_headers,header_billing_block_reason,object,False,86,100.0,0,
+outbound_delivery_headers,last_change_date,"datetime64[ns, UTC]",False,3,3.488372093023256,3,2025-07-24 00:00:00+00:00
+outbound_delivery_headers,overall_goods_movement_status,object,False,0,0.0,2,A
+outbound_delivery_headers,overall_picking_status,object,False,0,0.0,1,C
+outbound_delivery_headers,overall_proof_of_delivery_status,object,False,86,100.0,0,
+outbound_delivery_headers,shipping_point,object,False,0,0.0,5,1920
+outbound_delivery_items,actual_delivery_quantity,int64,False,0,0.0,11,1
+outbound_delivery_items,batch,object,False,24,17.51824817518248,1,ABCD
+outbound_delivery_items,delivery_document,int64,True,0,0.0,86,80738076
+outbound_delivery_items,delivery_document_item,int64,True,0,0.0,12,10
+outbound_delivery_items,delivery_quantity_unit,object,False,0,0.0,1,PC
+outbound_delivery_items,item_billing_block_reason,object,False,137,100.0,0,
+outbound_delivery_items,last_change_date,datetime64[ns],False,137,100.0,0,
+outbound_delivery_items,plant,object,False,0,0.0,5,WB05
+outbound_delivery_items,reference_sd_document,int64,False,0,0.0,86,740556
+outbound_delivery_items,reference_sd_document_item,int64,False,0,0.0,12,10
+outbound_delivery_items,storage_location,float64,False,13,9.489051094890511,5,5031.0
+billing_document_headers,billing_document,int64,True,0,0.0,163,90504248
+billing_document_headers,billing_document_type,object,False,0,0.0,2,F2
+billing_document_headers,creation_date,"datetime64[ns, UTC]",False,0,0.0,4,2025-04-03 00:00:00+00:00
+billing_document_headers,creation_time,datetime64[ns],False,163,100.0,0,
+billing_document_headers,last_change_date_time,"datetime64[ns, UTC]",False,0,0.0,84,2025-04-03 11:31:37.331000+00:00
+billing_document_headers,billing_document_date,"datetime64[ns, UTC]",False,0,0.0,3,2025-04-02 00:00:00+00:00
+billing_document_headers,billing_document_is_cancelled,bool,False,0,0.0,2,False
+billing_document_headers,cancelled_billing_document,object,False,83,50.920245398773005,80,90678703
+billing_document_headers,total_net_amount,float64,False,0,0.0,47,216.1
+billing_document_headers,transaction_currency,object,False,0,0.0,1,INR
+billing_document_headers,company_code,object,False,0,0.0,1,ABCD
+billing_document_headers,fiscal_year,int64,False,0,0.0,1,2025
+billing_document_headers,accounting_document,int64,False,0,0.0,163,9400000249
+billing_document_headers,sold_to_party,int64,False,0,0.0,4,320000083
+billing_document_items,billing_document,int64,True,0,0.0,163,90504298
+billing_document_items,billing_document_item,int64,True,0,0.0,12,10
+billing_document_items,material,object,False,0,0.0,55,B8907367041603
+billing_document_items,billing_quantity,int64,False,0,0.0,2,1
+billing_document_items,billing_quantity_unit,object,False,0,0.0,1,PC
+billing_document_items,net_amount,float64,False,0,0.0,53,533.05
+billing_document_items,transaction_currency,object,False,0,0.0,1,INR
+billing_document_items,reference_sd_document,int64,False,0,0.0,83,80738109
+billing_document_items,reference_sd_document_item,int64,False,0,0.0,12,10
+billing_document_cancellations,billing_document,int64,False,0,0.0,1,90504274
+billing_document_cancellations,billing_document_type,object,False,0,0.0,1,F2
+billing_document_cancellations,creation_date,"datetime64[ns, UTC]",False,0,0.0,1,2025-04-03 00:00:00+00:00
+billing_document_cancellations,creation_time,datetime64[ns],False,1,100.0,0,
+billing_document_cancellations,last_change_date_time,"datetime64[ns, UTC]",False,0,0.0,1,2025-07-24 11:42:30.485000+00:00
+billing_document_cancellations,billing_document_date,"datetime64[ns, UTC]",False,0,0.0,1,2025-04-02 00:00:00+00:00
+billing_document_cancellations,billing_document_is_cancelled,bool,False,0,0.0,1,True
+billing_document_cancellations,cancelled_billing_document,object,True,1,100.0,0,
+billing_document_cancellations,total_net_amount,float64,False,0,0.0,1,253.39
+billing_document_cancellations,transaction_currency,object,False,0,0.0,1,INR
+billing_document_cancellations,company_code,object,False,0,0.0,1,ABCD
+billing_document_cancellations,fiscal_year,int64,False,0,0.0,1,2025
+billing_document_cancellations,accounting_document,int64,False,0,0.0,1,9400000275
+billing_document_cancellations,sold_to_party,int64,False,0,0.0,1,320000083
+journal_entry_items_accounts_receivable,company_code,object,True,0,0.0,1,ABCD
+journal_entry_items_accounts_receivable,fiscal_year,int64,True,0,0.0,1,2025
+journal_entry_items_accounts_receivable,accounting_document,int64,True,0,0.0,123,9400000220
+journal_entry_items_accounts_receivable,gl_account,int64,False,0,0.0,1,15500020
+journal_entry_items_accounts_receivable,reference_document,int64,False,0,0.0,123,90504219
+journal_entry_items_accounts_receivable,cost_center,object,False,123,100.0,0,
+journal_entry_items_accounts_receivable,profit_center,object,False,0,0.0,1,ABC001
+journal_entry_items_accounts_receivable,transaction_currency,object,False,0,0.0,1,INR
+journal_entry_items_accounts_receivable,amount_in_transaction_currency,float64,False,0,0.0,79,897.03
+journal_entry_items_accounts_receivable,company_code_currency,object,False,0,0.0,1,INR
+journal_entry_items_accounts_receivable,amount_in_company_code_currency,float64,False,0,0.0,79,897.03
+journal_entry_items_accounts_receivable,posting_date,"datetime64[ns, UTC]",False,0,0.0,3,2025-04-02 00:00:00+00:00
+journal_entry_items_accounts_receivable,document_date,"datetime64[ns, UTC]",False,0,0.0,3,2025-04-02 00:00:00+00:00
+journal_entry_items_accounts_receivable,accounting_document_type,object,False,0,0.0,1,RV
+journal_entry_items_accounts_receivable,accounting_document_item,int64,True,0,0.0,1,1
+journal_entry_items_accounts_receivable,assignment_reference,object,False,123,100.0,0,
+journal_entry_items_accounts_receivable,last_change_date_time,"datetime64[ns, UTC]",False,0,0.0,3,2025-07-24 11:43:59+00:00
+journal_entry_items_accounts_receivable,customer,int64,False,0,0.0,2,320000083
+journal_entry_items_accounts_receivable,financial_account_type,object,False,0,0.0,1,D
+journal_entry_items_accounts_receivable,clearing_date,"datetime64[ns, UTC]",False,3,2.4390243902439024,2,2025-04-02 00:00:00+00:00
+journal_entry_items_accounts_receivable,clearing_accounting_document,float64,False,3,2.4390243902439024,76,9400635977.0
+journal_entry_items_accounts_receivable,clearing_doc_fiscal_year,int64,False,0,0.0,2,2025
+payments_accounts_receivable,company_code,object,True,0,0.0,1,ABCD
+payments_accounts_receivable,fiscal_year,int64,True,0,0.0,1,2025
+payments_accounts_receivable,accounting_document,int64,True,0,0.0,120,9400000220
+payments_accounts_receivable,accounting_document_item,int64,False,0,0.0,1,1
+payments_accounts_receivable,clearing_date,"datetime64[ns, UTC]",False,0,0.0,2,2025-04-02 00:00:00+00:00
+payments_accounts_receivable,clearing_accounting_document,int64,False,0,0.0,76,9400635977
+payments_accounts_receivable,clearing_doc_fiscal_year,int64,False,0,0.0,1,2025
+payments_accounts_receivable,amount_in_transaction_currency,float64,False,0,0.0,78,897.03
+payments_accounts_receivable,transaction_currency,object,False,0,0.0,1,INR
+payments_accounts_receivable,amount_in_company_code_currency,float64,False,0,0.0,78,897.03
+payments_accounts_receivable,company_code_currency,object,False,0,0.0,1,INR
+payments_accounts_receivable,customer,int64,False,0,0.0,2,320000083
+payments_accounts_receivable,invoice_reference,object,False,120,100.0,0,
+payments_accounts_receivable,invoice_reference_fiscal_year,object,False,120,100.0,0,
+payments_accounts_receivable,sales_document,object,False,120,100.0,0,
+payments_accounts_receivable,sales_document_item,object,False,120,100.0,0,
+payments_accounts_receivable,posting_date,"datetime64[ns, UTC]",False,0,0.0,2,2025-04-02 00:00:00+00:00
+payments_accounts_receivable,document_date,"datetime64[ns, UTC]",False,0,0.0,2,2025-04-02 00:00:00+00:00
+payments_accounts_receivable,assignment_reference,object,False,120,100.0,0,
+payments_accounts_receivable,gl_account,int64,False,0,0.0,1,15500020
+payments_accounts_receivable,financial_account_type,object,False,0,0.0,1,D
+payments_accounts_receivable,profit_center,object,False,0,0.0,1,ABC001
+payments_accounts_receivable,cost_center,object,False,120,100.0,0,
+business_partners,business_partner,int64,True,0,0.0,8,310000108
+business_partners,customer,int64,False,0,0.0,8,310000108
+business_partners,business_partner_category,int64,False,0,0.0,1,2
+business_partners,business_partner_full_name,object,False,0,0.0,8,"Cardenas, Parker and Avila"
+business_partners,business_partner_grouping,object,False,0,0.0,2,Y101
+business_partners,business_partner_name,object,False,0,0.0,8,"Cardenas, Parker and Avila"
+business_partners,correspondence_language,object,False,8,100.0,0,
+business_partners,created_by_user,object,False,0,0.0,2,USER750
+business_partners,creation_date,"datetime64[ns, UTC]",False,0,0.0,2,2024-04-16 00:00:00+00:00
+business_partners,creation_time,datetime64[ns],False,8,100.0,0,
+business_partners,first_name,object,False,8,100.0,0,
+business_partners,form_of_address,int64,False,0,0.0,1,3
+business_partners,industry,object,False,8,100.0,0,
+business_partners,last_change_date,"datetime64[ns, UTC]",False,0,0.0,4,2025-06-27 00:00:00+00:00
+business_partners,last_name,object,False,8,100.0,0,
+business_partners,organization_bp_name1,object,False,0,0.0,8,"Cardenas, Parker and Avila"
+business_partners,organization_bp_name2,object,False,7,87.5,1,Torres-Williams
+business_partners,business_partner_is_blocked,bool,False,0,0.0,2,False
+business_partners,is_marked_for_archiving,bool,False,0,0.0,2,False
+business_partner_addresses,business_partner,int64,True,0,0.0,8,310000108
+business_partner_addresses,address_id,int64,True,0,0.0,8,4605
+business_partner_addresses,validity_start_date,"datetime64[ns, UTC]",False,0,0.0,2,2024-04-16 00:00:00+00:00
+business_partner_addresses,validity_end_date,datetime64[ns],False,8,100.0,0,
+business_partner_addresses,address_uuid,object,False,0,0.0,8,af79c9a3-05bf-1ede-bef9-0812e7757c0e
+business_partner_addresses,address_time_zone,datetime64[ns],False,8,100.0,0,
+business_partner_addresses,city_name,object,False,6,75.0,2,Lake Christopher
+business_partner_addresses,country,object,False,0,0.0,1,IN
+business_partner_addresses,po_box,object,False,8,100.0,0,
+business_partner_addresses,po_box_deviating_city_name,object,False,8,100.0,0,
+business_partner_addresses,po_box_deviating_country,object,False,8,100.0,0,
+business_partner_addresses,po_box_deviating_region,object,False,8,100.0,0,
+business_partner_addresses,po_box_is_without_number,bool,False,0,0.0,1,False
+business_partner_addresses,po_box_lobby_name,object,False,8,100.0,0,
+business_partner_addresses,po_box_postal_code,object,False,8,100.0,0,
+business_partner_addresses,postal_code,object,False,5,62.5,3,18589
+business_partner_addresses,region,object,False,0,0.0,7,TS
+business_partner_addresses,street_name,object,False,6,75.0,2,0171 Rebecca Glen
+business_partner_addresses,tax_jurisdiction,object,False,8,100.0,0,
+business_partner_addresses,transport_zone,object,False,8,100.0,0,
+customer_company_assignments,customer,int64,True,0,0.0,8,310000108
+customer_company_assignments,company_code,object,True,0,0.0,1,ABCD
+customer_company_assignments,accounting_clerk,object,False,8,100.0,0,
+customer_company_assignments,accounting_clerk_fax_number,object,False,8,100.0,0,
+customer_company_assignments,accounting_clerk_internet_address,object,False,8,100.0,0,
+customer_company_assignments,accounting_clerk_phone_number,object,False,8,100.0,0,
+customer_company_assignments,alternative_payer_account,object,False,8,100.0,0,
+customer_company_assignments,payment_blocking_reason,object,False,8,100.0,0,
+customer_company_assignments,payment_methods_list,object,False,8,100.0,0,
+customer_company_assignments,payment_terms,object,False,6,75.0,1,Z001
+customer_company_assignments,reconciliation_account,int64,False,0,0.0,2,15500010
+customer_company_assignments,deletion_indicator,bool,False,0,0.0,2,False
+customer_company_assignments,customer_account_group,object,False,0,0.0,2,Y101
+customer_sales_area_assignments,customer,int64,True,0,0.0,8,310000108
+customer_sales_area_assignments,sales_organization,object,True,0,0.0,1,ABCD
+customer_sales_area_assignments,distribution_channel,float64,True,8,28.571428571428573,3,5.0
+customer_sales_area_assignments,division,int64,True,0,0.0,1,99
+customer_sales_area_assignments,billing_is_blocked_for_customer,object,False,28,100.0,0,
+customer_sales_area_assignments,complete_delivery_is_defined,bool,False,0,0.0,1,False
+customer_sales_area_assignments,credit_control_area,object,False,28,100.0,0,
+customer_sales_area_assignments,currency,object,False,0,0.0,1,INR
+customer_sales_area_assignments,customer_payment_terms,object,False,0,0.0,2,Z009
+customer_sales_area_assignments,delivery_priority,int64,False,0,0.0,1,0
+customer_sales_area_assignments,incoterms_classification,object,False,5,17.857142857142858,1,FOR
+customer_sales_area_assignments,incoterms_location1,object,False,5,17.857142857142858,3,Millerborough
+customer_sales_area_assignments,sales_group,object,False,28,100.0,0,
+customer_sales_area_assignments,sales_office,object,False,28,100.0,0,
+customer_sales_area_assignments,shipping_condition,float64,False,6,21.428571428571427,1,1.0
+customer_sales_area_assignments,sls_unlmtd_ovrdeliv_is_allwd,bool,False,0,0.0,1,False
+customer_sales_area_assignments,supplying_plant,object,False,28,100.0,0,
+customer_sales_area_assignments,sales_district,object,False,28,100.0,0,
+customer_sales_area_assignments,exchange_rate_type,object,False,26,92.85714285714286,1,M
+products,product,object,True,0,0.0,69,3001456
+products,product_type,object,False,0,0.0,3,ZPKG
+products,cross_plant_status,object,False,69,100.0,0,
+products,cross_plant_status_validity_date,datetime64[ns],False,69,100.0,0,
+products,creation_date,"datetime64[ns, UTC]",False,0,0.0,2,2024-11-26 00:00:00+00:00
+products,created_by_user,object,False,0,0.0,1,USER108
+products,last_change_date,"datetime64[ns, UTC]",False,0,0.0,5,2025-09-18 00:00:00+00:00
+products,last_change_date_time,"datetime64[ns, UTC]",False,0,0.0,24,2025-09-18 11:51:26+00:00
+products,is_marked_for_deletion,bool,False,0,0.0,1,False
+products,product_old_id,object,False,0,0.0,69,WD-BOX-CG
+products,gross_weight,float64,False,0,0.0,2,0.012
+products,weight_unit,object,False,0,0.0,1,KG
+products,net_weight,float64,False,0,0.0,2,0.01
+products,product_group,object,False,0,0.0,2,ZPKG004
+products,base_unit,object,False,0,0.0,1,PC
+products,division,int64,False,0,0.0,2,2
+products,industry_sector,object,False,0,0.0,1,M
+product_descriptions,product,object,True,0,0.0,69,3001456
+product_descriptions,language,object,True,0,0.0,1,EN
+product_descriptions,product_description,object,False,0,0.0,69,WB-CG CHARCOAL GANG
+product_plants,product,object,True,0,0.0,69,S8907367010814
+product_plants,plant,object,True,0,0.0,44,MP07
+product_plants,country_of_origin,object,False,3036,100.0,0,
+product_plants,region_of_origin,object,False,3036,100.0,0,
+product_plants,production_invtry_managed_loc,object,False,3036,100.0,0,
+product_plants,availability_check_type,object,False,0,0.0,1,NC
+product_plants,fiscal_year_variant,object,False,3036,100.0,0,
+product_plants,profit_center,object,False,0,0.0,2,ABC001
+product_plants,mrp_type,object,False,0,0.0,1,ND
+product_storage_locations,product,object,True,0,0.0,69,B8907367022152
+product_storage_locations,plant,object,True,0,0.0,44,HR05
+product_storage_locations,storage_location,float64,True,412,2.707854091357213,213,5066.0
+product_storage_locations,physical_inventory_block_ind,object,False,15215,100.0,0,
+product_storage_locations,date_of_last_posted_cnt_un_rstrcd_stk,datetime64[ns],False,15215,100.0,0,
+plants,plant,object,True,0,0.0,44,1001
+plants,plant_name,object,False,0,0.0,44,Lake Christopher Plant
+plants,valuation_area,object,False,0,0.0,44,1001
+plants,plant_customer,object,False,0,0.0,44,1001
+plants,plant_supplier,object,False,9,20.454545454545453,35,1001
+plants,factory_calendar,object,False,0,0.0,1,IN
+plants,default_purchasing_organization,object,False,44,100.0,0,
+plants,sales_organization,object,False,0,0.0,1,ABCD
+plants,address_id,int64,False,0,0.0,44,93
+plants,plant_category,object,False,44,100.0,0,
+plants,distribution_channel,int64,False,0,0.0,1,80
+plants,division,int64,False,0,0.0,1,99
+plants,language,object,False,0,0.0,1,EN
+plants,is_marked_for_archiving,bool,False,0,0.0,1,False

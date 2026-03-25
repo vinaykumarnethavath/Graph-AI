@@ -1,0 +1,339 @@
+{
+  "primary_keys": {
+    "sales_order_headers": [
+      "sales_order"
+    ],
+    "sales_order_items": [
+      "sales_order",
+      "sales_order_item"
+    ],
+    "sales_order_schedule_lines": [
+      "sales_order",
+      "sales_order_item",
+      "schedule_line"
+    ],
+    "outbound_delivery_headers": [
+      "delivery_document"
+    ],
+    "outbound_delivery_items": [
+      "delivery_document",
+      "delivery_document_item"
+    ],
+    "billing_document_headers": [
+      "billing_document"
+    ],
+    "billing_document_items": [
+      "billing_document",
+      "billing_document_item"
+    ],
+    "billing_document_cancellations": [
+      "cancelled_billing_document"
+    ],
+    "journal_entry_items_accounts_receivable": [
+      "company_code",
+      "fiscal_year",
+      "accounting_document",
+      "accounting_document_item"
+    ],
+    "payments_accounts_receivable": [
+      "company_code",
+      "fiscal_year",
+      "accounting_document"
+    ],
+    "business_partners": [
+      "business_partner"
+    ],
+    "business_partner_addresses": [
+      "business_partner",
+      "address_id"
+    ],
+    "customer_company_assignments": [
+      "customer",
+      "company_code"
+    ],
+    "customer_sales_area_assignments": [
+      "customer",
+      "sales_organization",
+      "distribution_channel",
+      "division"
+    ],
+    "products": [
+      "product"
+    ],
+    "product_descriptions": [
+      "product",
+      "language"
+    ],
+    "product_plants": [
+      "product",
+      "plant"
+    ],
+    "product_storage_locations": [
+      "product",
+      "plant",
+      "storage_location"
+    ],
+    "plants": [
+      "plant"
+    ]
+  },
+  "foreign_key_relationships": [
+    {
+      "child_entity": "sales_order_items",
+      "child_keys": [
+        "sales_order"
+      ],
+      "parent_entity": "sales_order_headers",
+      "parent_keys": [
+        "sales_order"
+      ],
+      "total_child_records": 167,
+      "unique_child_values": 100,
+      "unique_parent_values": 100,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "sales_order_schedule_lines",
+      "child_keys": [
+        "sales_order"
+      ],
+      "parent_entity": "sales_order_headers",
+      "parent_keys": [
+        "sales_order"
+      ],
+      "total_child_records": 179,
+      "unique_child_values": 100,
+      "unique_parent_values": 100,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "sales_order_schedule_lines",
+      "child_keys": [
+        "sales_order",
+        "sales_order_item"
+      ],
+      "parent_entity": "sales_order_items",
+      "parent_keys": [
+        "sales_order",
+        "sales_order_item"
+      ],
+      "total_child_records": 179,
+      "unique_child_values": 167,
+      "unique_parent_values": 167,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "sales_order_headers",
+      "child_keys": [
+        "sold_to_party"
+      ],
+      "parent_entity": "business_partners",
+      "parent_keys": [
+        "business_partner"
+      ],
+      "total_child_records": 100,
+      "unique_child_values": 8,
+      "unique_parent_values": 8,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "sales_order_items",
+      "child_keys": [
+        "material"
+      ],
+      "parent_entity": "products",
+      "parent_keys": [
+        "product"
+      ],
+      "total_child_records": 167,
+      "unique_child_values": 69,
+      "unique_parent_values": 69,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "sales_order_items",
+      "child_keys": [
+        "production_plant"
+      ],
+      "parent_entity": "plants",
+      "parent_keys": [
+        "plant"
+      ],
+      "total_child_records": 167,
+      "unique_child_values": 7,
+      "unique_parent_values": 44,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "outbound_delivery_items",
+      "child_keys": [
+        "delivery_document"
+      ],
+      "parent_entity": "outbound_delivery_headers",
+      "parent_keys": [
+        "delivery_document"
+      ],
+      "total_child_records": 137,
+      "unique_child_values": 86,
+      "unique_parent_values": 86,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "billing_document_items",
+      "child_keys": [
+        "billing_document"
+      ],
+      "parent_entity": "billing_document_headers",
+      "parent_keys": [
+        "billing_document"
+      ],
+      "total_child_records": 245,
+      "unique_child_values": 163,
+      "unique_parent_values": 163,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "billing_document_items",
+      "child_keys": [
+        "material"
+      ],
+      "parent_entity": "products",
+      "parent_keys": [
+        "product"
+      ],
+      "total_child_records": 245,
+      "unique_child_values": 55,
+      "unique_parent_values": 69,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "billing_document_cancellations",
+      "child_keys": [
+        "cancelled_billing_document"
+      ],
+      "parent_entity": "billing_document_headers",
+      "parent_keys": [
+        "billing_document"
+      ],
+      "total_child_records": 1,
+      "unique_child_values": 0,
+      "unique_parent_values": 163,
+      "orphaned_records": 0,
+      "integrity_pct": 100
+    },
+    {
+      "child_entity": "product_descriptions",
+      "child_keys": [
+        "product"
+      ],
+      "parent_entity": "products",
+      "parent_keys": [
+        "product"
+      ],
+      "total_child_records": 69,
+      "unique_child_values": 69,
+      "unique_parent_values": 69,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "product_plants",
+      "child_keys": [
+        "product"
+      ],
+      "parent_entity": "products",
+      "parent_keys": [
+        "product"
+      ],
+      "total_child_records": 3036,
+      "unique_child_values": 69,
+      "unique_parent_values": 69,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "product_plants",
+      "child_keys": [
+        "plant"
+      ],
+      "parent_entity": "plants",
+      "parent_keys": [
+        "plant"
+      ],
+      "total_child_records": 3036,
+      "unique_child_values": 44,
+      "unique_parent_values": 44,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "product_storage_locations",
+      "child_keys": [
+        "product"
+      ],
+      "parent_entity": "products",
+      "parent_keys": [
+        "product"
+      ],
+      "total_child_records": 15215,
+      "unique_child_values": 69,
+      "unique_parent_values": 69,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "product_storage_locations",
+      "child_keys": [
+        "plant"
+      ],
+      "parent_entity": "plants",
+      "parent_keys": [
+        "plant"
+      ],
+      "total_child_records": 15215,
+      "unique_child_values": 44,
+      "unique_parent_values": 44,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "customer_company_assignments",
+      "child_keys": [
+        "customer"
+      ],
+      "parent_entity": "business_partners",
+      "parent_keys": [
+        "business_partner"
+      ],
+      "total_child_records": 8,
+      "unique_child_values": 8,
+      "unique_parent_values": 8,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    },
+    {
+      "child_entity": "customer_sales_area_assignments",
+      "child_keys": [
+        "customer"
+      ],
+      "parent_entity": "business_partners",
+      "parent_keys": [
+        "business_partner"
+      ],
+      "total_child_records": 28,
+      "unique_child_values": 8,
+      "unique_parent_values": 8,
+      "orphaned_records": 0,
+      "integrity_pct": 100.0
+    }
+  ]
+}

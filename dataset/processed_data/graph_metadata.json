@@ -1,0 +1,30 @@
+{
+  "total_nodes": 1139,
+  "total_edges": 4139,
+  "node_types": {
+    "Customer": 8,
+    "Product": 69,
+    "Plant": 44,
+    "SalesOrder": 100,
+    "SalesOrderItem": 167,
+    "Delivery": 86,
+    "DeliveryItem": 137,
+    "Invoice": 163,
+    "InvoiceItem": 245,
+    "Payment": 120
+  },
+  "edge_types": {
+    "PLACED_BY": 100,
+    "HAS_ITEM": 167,
+    "CONTAINS_PRODUCT": 167,
+    "FROM_PLANT": 167,
+    "DELIVERS_ORDER": 137,
+    "INVOICES_DELIVERY": 245,
+    "INVOICES_ORDER": 0,
+    "PAID_BY": 120,
+    "SETTLES_INVOICE": 0,
+    "AVAILABLE_AT": 3036
+  },
+  "graph_type": "MultiDiGraph",
+  "is_directed": true
+}

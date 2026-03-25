@@ -1,0 +1,2 @@
+billing_document,billing_document_type,creation_date,creation_time,last_change_date_time,billing_document_date,billing_document_is_cancelled,cancelled_billing_document,total_net_amount,transaction_currency,company_code,fiscal_year,accounting_document,sold_to_party
+90504274,F2,2025-04-03 00:00:00+00:00,,2025-07-24 11:42:30.485000+00:00,2025-04-02 00:00:00+00:00,True,,253.39,INR,ABCD,2025,9400000275,320000083

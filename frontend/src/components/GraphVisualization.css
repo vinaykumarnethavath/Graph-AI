@@ -1,0 +1,74 @@
+.graph-visualization {
+  flex: 1;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.graph-controls {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #111827;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.control-btn:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* React Flow Customization */
+.react-flow__handle {
+  opacity: 0;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+.react-flow__node {
+  cursor: pointer;
+}
+
+.react-flow__node:focus {
+  outline: none;
+}
+
+.react-flow__controls {
+  right: 16px;
+  bottom: 16px;
+  left: auto;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none;
+}
+
+.react-flow__minimap {
+  border-radius: 10px;
+  overflow: hidden;
+}
