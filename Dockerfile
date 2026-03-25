@@ -22,7 +22,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend code and dataset
 COPY backend/ ./backend/
 COPY dataset/ ./dataset/
-COPY .env .
 
 # Copy built frontend from Stage 1 to backend/static
 COPY --from=frontend-build /app/frontend/dist ./backend/static
