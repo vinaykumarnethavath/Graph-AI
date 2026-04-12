@@ -1,7 +1,7 @@
 # Graph AI
 
 Graph AI is an AI-assisted Order-to-Cash knowledge graph application that combines a FastAPI backend, a React frontend, a NetworkX graph store, and a Groq-powered LLM layer to help you explore business process relationships across customers, sales orders, deliveries, billing documents, journal entries, payments, products, and plants.
-
+live link - https://graph-ai.onrender.com/
 ## About
 
 Graph AI turns SAP Order-to-Cash data into a connected graph and allows you to:
